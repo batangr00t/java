@@ -8,7 +8,7 @@
 * slower for adding/removing than LinkedList ( O(n) vs O(1) ) 
 * grows or shrinks automatically, can reseve capacity by ensureCapacity() or constructor
 * grows by half of its size ( Vector doubles the size by default )
-* can be sorted
+* can be sorted by Comparator or lambda ( arrayList.sort( comparator ); arrayList.sort( (a,b) -> b.compareTo(a) ); )
 * iterator is fail-fast ( Vector's iterator is same. but the Enumeration returned by Vector is not fail-fast ) 
 * non-synchronized ( Vector is synchronized )
 * List<String> syncArrayList = Collections.synchronizedList(new ArrayList<String>());
