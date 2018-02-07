@@ -32,3 +32,11 @@
   ```
   * https://docs.oracle.com/javase/7/docs/api/java/util/List.html
   * https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html
+* has APIs for STACK and double ended QUEUE
+
+## Vector
+* implements List
+* synchronized so thread-safe
+* in multi-threaded environment, use Vector class instead of ArrayList
+
+
