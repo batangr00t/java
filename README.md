@@ -1,8 +1,11 @@
 # java study
 
-## ArrayList
-* allows duplicate elements and null values
+## List
 * uses zero based index
+* allows duplicate elements and null values
+* maintains the insertion order
+
+### ArrayList
 * uses array data structure
 * faster for searching than LinkedList ( O(1) vs O(n) ), 
 * slower for adding/removing than LinkedList ( O(n) vs O(1) ) 
@@ -23,7 +26,7 @@
   ```
 * in read only and single thread environment, ArrayList is the best choice
 
-## LinkedList
+### LinkedList
 * doubly-linked list implementation of the List and Deque interfaces
   * List and Deque example
   ``` java
@@ -34,9 +37,55 @@
   * https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html
 * has APIs for STACK and double ended QUEUE
 
-## Vector
+### Vector
 * implements List
 * synchronized so thread-safe
 * in multi-threaded environment, use Vector class instead of ArrayList
 
+## Set
+* a collection that cannot contain duplicate elements.
+* allows null value but not duplicate
+* use Iterator to traverse its elements ( but not ListIterator )
 
+### HashSet
+* does not maintain any order
+* non-synchronized
+* better performance than TreeSet
+* override equals() and hashCode() in order to detect duplication based on its value
+```java
+class Box {
+	private String name;
+	
+	public Box(String s) {
+		System.out.println( "created "+s );
+		this.name = s;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		System.out.println( "---- Box.equals()");
+		Box b = (Box)other;
+		if ( name == null ) { 
+			return ( b == null ) ? true : false;
+		} else {
+			return name.equals(b.name);
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+		return ( name == null ) ? 0 : name.hashCode();
+	}
+}
+```
+* synchronize by 
+ *
+ ```java
+ Set s = Collections.synchronizedSet(new HashSet(...));
+ ```
+
+### LinkedHashSet
+* orders its elements based on their values
+
+### TreeSet
+* keeps insertion-order
