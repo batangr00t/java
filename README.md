@@ -108,4 +108,4 @@ class Box {
 * cannot contain duplicate keys but duplicate values
 
 ### HashMap
-* 
+* map.forEach((k,v)->System.out.println(k+"=>"+v));
