@@ -109,3 +109,20 @@ class Box {
 
 ### HashMap
 * map.forEach((k,v)->System.out.println(k+"=>"+v));
+* non-synchronized
+* allows one null key and any number of null values
+
+### LinkedHashMap
+* maintains insertion order
+* non-synchronized
+* allows one null key and any number of null values
+
+### TreeMap
+* sorts the elements based on the keys
+* non-synchronized
+* doesn't allow null key but allow null values 
+
+### Hashtable
+* doesn’t guarantee any kind of order
+* synchronized
+* doesn’t allow null keys and null values
