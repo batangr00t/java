@@ -4,6 +4,7 @@
 * uses zero based index
 * allows duplicate elements and null values
 * maintains the insertion order
+* ListIterator can be used to traverse a List in both the directions(forward and backward) and Iterator also can be used 
 
 ### ArrayList
 * uses array data structure
@@ -44,17 +45,17 @@
 
 ## Set
 * a collection that cannot contain duplicate elements.
-* allows null value but not duplicate
 * use Iterator to traverse its elements ( but not ListIterator )
 
 ### HashSet
 * does not maintain any order
+* allows null value but not duplicate
 * non-synchronized
 * better performance than TreeSet
 * override equals() and hashCode() in order to detect duplication based on its value
 ```java
 class Box {
-	private String name;
+	public String name;
 	
 	public Box(String s) {
 		System.out.println( "created "+s );
@@ -85,7 +86,26 @@ class Box {
  ```
 
 ### LinkedHashSet
-* orders its elements based on their values
+* keeps insertion-order
+* allows null value but not duplicate
 
 ### TreeSet
-* keeps insertion-order
+* orders its elements based on their values
+* its element has to have compareTo() method ( implements Comparable<> )
+  ```java
+  class Box implements Comparable<Box> {
+  	public String name;
+  	@Override
+	public int compareTo(Box arg0) {
+		return name.compareTo(arg0.name);
+	}
+  }
+  ```
+* does not allow null value
+
+## Map
+* a collection that maps keys to values
+* cannot contain duplicate keys but duplicate values
+
+### HashMap
+* 
