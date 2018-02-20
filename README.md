@@ -105,6 +105,7 @@ class Box {
 ## Map
 * a collection that maps keys to values
 * cannot contain duplicate keys but duplicate values
+* cannot use ListIterator nor Iterator
 
 ### HashMap
 * map.forEach((k,v)->System.out.println(k+"=>"+v));
