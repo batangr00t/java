@@ -106,7 +106,7 @@ class Box {
 * a collection that maps keys to values
 * cannot contain duplicate keys but duplicate values
 * cannot use ListIterator nor Iterator
-* traverse like this 
+* traverse like this:
  ```java
   map.forEach((k,v)->System.out.println(k+"=>"+v));
   ```
